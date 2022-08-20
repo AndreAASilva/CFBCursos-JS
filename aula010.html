@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF aninhado</title>
+
+    <script>
+        //Aula sobre o uso do IF aninhado, sobre a utilização de um IF dentro de outro
+
+        var nota = 21
+        var res = 'Aprovado';
+        /*
+        if(nota>=60){
+            res='APROVADO'
+            
+           if(nota>=95){
+                if(nota == 100){
+                    res+=' com excelência'
+
+                }else{
+                    res+=' com louvor'
+                }
+
+           }else{
+                res+=' com nota normal'
+           }
+
+        }
+        
+        else if(nota>=40){
+            res='Recuperação'
+
+        }else{
+            res='REPROVADO'
+        if(nota>=20){
+            res+=' por nota baixa'
+
+        }else{
+            res+=' com louvor'
+        }
+
+        }
+
+        document.write(res)
+        */
+
+        if(nota>=60){
+            if(nota>=95){
+                if(nota==100){
+                    res+=' com excelência'
+
+                }else{
+                    res+=' com louvor'
+                }
+
+            }else{
+                res+=' nota normal'
+            }
+
+        }else if(nota>=40){
+            res='Recuperação'
+        }
+        
+        else{
+            res='Reprovado'
+            if(nota>=20){
+                res+=' nota baixa'
+
+            }else{
+                res+=' com louvor'
+            }
+        }
+        
+        document.write(res)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
