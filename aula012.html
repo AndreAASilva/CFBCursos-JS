@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+    <script>
+
+        //O Switch Case é utilizado quando sabemos quais valores serão usados, como no exemplo, o IF definiu cada posição, 1, 2 e 3, e com isso sabemos que esses valores sempre serão utilizados neste modelo, cabendo o uso do switch case.
+        
+        var pos, msg
+
+        var pontos = 0
+
+        if(pontos >= 1000){
+            pos = 1
+
+        }else if(pontos >= 800){
+            pos = 2
+        }else if(pontos >= 600){
+            pos = 3    
+        }else{
+            pos = 0
+        }
+
+        switch(pos){
+            case 1:
+                msg="Primeiro lugar<br>Medalha de ouro"
+                break
+            case 2:
+                msg="Segundo Lugar<br>Medalha de prata"
+                break
+            case 3:
+                msg="Terceiro lugar<br>Medalha de bronze"
+                break
+            default:
+                msg="Não foi ao pódio<br>Não obteve medalha"
+        }
+
+        switch(pos){
+            case 1:
+            case 2:
+            case 3:
+                document.write(msg+='<br>Subiu ao pódio<br>Pontuação: ',+pontos)
+                break
+            default:
+                document.write(msg+='<br>Não obteve colocação<br>Pontuação: ',+pontos)
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

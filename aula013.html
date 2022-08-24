@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array / Vetor - Aula 01</title>
+
+    <script>
+        // O push insere elementos dentro do array na última posição
+
+        var cor = []
+        /*
+        cor.push('Preto')
+        cor.push('Branco')
+        cor.push('Verde')
+        cor.push('Azul')
+        cor.push('Cinza')
+        
+
+        cor[0]='Preto'
+        cor[1]='Branco'
+        cor[2]='Verde'
+        cor[3]='Azul'
+        cor[4]='Cinza'
+        */
+
+        //document.write(cor[1])
+
+        //Outra forma de armazenar informações no array
+        var itens = ['Faca', 'Pederneira', 'Corda', 'Lanterna', 'Luvas', 'Chave de fenda','Arame']
+        //Aqui foi criado um array sem elementos dentro para serem armazenados depois, no caso os elementos acima
+        var mochila = []
+        //Forma de armazenar os elementos ITENS dentro do array mochila
+        //mochila.push(itens[4])
+        //document.write(mochila[0])
+
+        //Outra forma de armazer um item no array mochila
+        //Obs.: Melhor forma de armazenar um elemento é pela posição como está abaixo, pois, se for alterado por exemplo a palavra da posição, desta forma ele altera no banco de dados, mas, se for armazenado pela escrita, e houver alteração no banco, não haverá mudança de nome na posição
+        mochila.push(5)
+        mochila.push(0)
+        mochila.push(2)
+        //Outra forma de imprimir o valor tendo o mesmo resultado do código acima
+        document.write(itens[mochila[0]]+"<br>")
+        document.write(itens[mochila[1]]+"<br>")
+        document.write(itens[mochila[2]]+"<br>")
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

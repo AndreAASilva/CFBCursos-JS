@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array / Vetor - Aula 03</title>
+
+    <script>
+
+        var mochila = [], mochila1 = [], mochila2 = [],pos
+
+        
+        mochila1.push('Faca')
+        mochila1.push('Corda')
+        mochila1.push('Pederneira')
+        mochila1.push('Chave')
+        mochila1.push('Lanterna')
+        mochila1.push('Pedra')
+
+        mochila2.push('Arame')
+        mochila2.push('Luvas')
+        mochila2.push('Joelheiras')
+        mochila2.push('Meias')
+        mochila2.push('Moeda')
+        mochila2.push('Canivete')
+
+        //Utilizando o concat eu posso concatenar dois arrays em um único 
+        mochila=mochila1.concat(mochila2)
+
+        document.write(mochila[0]+'<br>')
+        document.write(mochila[1]+'<br>')
+        document.write(mochila[2]+'<br>')
+        document.write(mochila[3]+'<br>')
+        document.write(mochila[4]+'<br>')
+        document.write(mochila[5]+'<br>')
+        document.write(mochila[6]+'<br>')
+        document.write(mochila[7]+'<br>')
+        document.write(mochila[8]+'<br>')
+        document.write(mochila[9]+'<br>')
+        document.write(mochila[10]+'<br>')
+        document.write(mochila[11]+'<br>')
+
+        document.write('Tamanho da mochila1: '+mochila1.length+'<br>')
+        document.write('Tamanho da mochila2: '+mochila2.length+'<br>')
+        document.write('Tamanho da mochila1 e mochila2: '+mochila.length+'<br>')
+
+        //Com o indeOf eu consigo descobrir a posição do array pelo nome do elemento, caso não tenha esse elemento, ele retorna com o valor -1
+        //document.write(mochila.indexOf('Lantern'))
+
+        /*
+        pos=mochila.indexOf('Pedra')
+
+        if(pos < 0){
+            document.write('Item não está na mochila')
+
+        }else{
+            document.write('O item está na mochila<br>Posição: '+pos)
+        }
+        */
+
+        /*
+        var pos = -1
+
+        var numeros;
+
+        var num = [5,8,4,9,7,6,3,0,2,1]
+        //var num = ['maria', 'joão', 'antonio', 'carlos', 'miguel', 'andré', 'naldo', 'teodoro', 'bete', 'bidu']
+        //Para o reverse funcionar, tem que usar o sort antes para ele ordenar e depois reverter a ordem, pois se utilizar apenas o reverse em valores aleatórios, ele vai reverter pela ordem que estão no array
+        num.sort()//sort ordena os elementos na ordem crescente - Serve para strings
+        num.reverse()//reverse ordena os elemento em ordem decrescente - Serve para strings
+
+        //Com o join eu posso criar uma variável onde vou imprimir todos os elemento do array em uma unica fileira separados por vírgula transformando eles em strings
+        numeros=num.join()
+        document.write(numeros+'<br>')
+
+
+        document.write(num[0]+'<br>')
+        document.write(num[1]+'<br>')
+        document.write(num[2]+'<br>')
+        document.write(num[3]+'<br>')
+        document.write(num[4]+'<br>')
+        document.write(num[5]+'<br>')
+        document.write(num[6]+'<br>')
+        document.write(num[7]+'<br>')
+        document.write(num[8]+'<br>')
+        document.write(num[9]+'<br>')
+        */
+
+        
+        /*
+        document.write(mochila[0]+'<br>')
+        document.write(mochila[1]+'<br>')
+        document.write(mochila[2]+'<br>')
+        document.write(mochila[3]+'<br>')
+        document.write(mochila[4]+'<br>')
+        document.write(mochila[5]+'<br>')
+        */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
