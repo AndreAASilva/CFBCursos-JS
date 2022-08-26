@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comando de loop FOR</title>
+
+    <script>
+        //FOR necessita de três parâmetros 
+        //Contador - Condição de execução - incremento ou decremento 
+
+        // A variável pode ser utilizada fora ou dentro do FOR que passará a valer apelas para ele (var cont;)
+
+        var mochila = [['Corda', 1], ['Cura', 10], ['Lanterna', 1], ['Pilhas', 20]]
+        /*
+        num.push(0)
+        num.push(1)
+        num.push(2)
+        num.push(3)
+        num.push(4)
+        */
+
+        //Aqui utilizando o prompt eu inseri os valores dentro do array
+        for(var linha = 0; linha < 4; linha++){
+            for(var col=0; col<2; col++){
+                document.write(mochila[linha][col]+' ')
+
+            }
+            document.write('<br>')
+
+        }
+
+
+        for(var tab = 1; tab <= 10; tab++){
+            document.write('3 x '+tab+ ' = '+ 3*tab+'<br>')
+        }
+
+        for(var tab1 = 1; tab1 <= 10; tab1++){
+            document.write('4 x '+tab1+ ' = '+ 4*tab1+'<br>')
+        }
+
+
+
+        /*
+        for(var cont = 0; cont < 5; cont++ ){
+
+            //Determino o que vai ser repetido
+            document.write(num[cont]+'<br>')
+        }
+        */
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

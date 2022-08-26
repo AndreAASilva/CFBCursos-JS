@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comando de loop WHILE</title>
+
+    <script>
+        //WHILE é utilizado quando não sabemos a quantidade de repetições, diferente do FOR que determinamos uma quantidade.
+
+        var nome = 0
+
+        while(nome < 10){
+            document.write('Ganhei '+nome+'<br>')
+            document.write(nome+'<br>')
+            nome++
+        }
+        
+        document.write('<br>')
+
+        var nu = 0
+
+        while(nu <= 10){
+            document.write(nu+'<br>')
+            nu++
+
+        }
+
+        document.write('<br>')
+        var num = 0
+
+        while(num <=10){
+            document.write(num+'<br>')
+            num++
+
+        }
+
+        document.write('<br>')
+
+        //Aqui foi um exemplo da aula indicando uma forma de regredir a contagem inserindo o incremento no segundo passo do while
+        var num2 = 10
+
+        while(num2--){
+            document.write(num2+'<br>')
+
+        }
+
+        document.write('<br>')
+
+        var num3 = true
+        cont = 0
+
+        while(num3){
+            document.write('André<br>')
+            cont++
+            if(cont > 9){
+                num3=false
+
+            }
+        }
+
+        var c1 = true
+        var con = 0
+        while(c1){
+            document.write('André Anderson<br>')
+            con++
+            if(con > 10){
+                c1=false
+
+            }
+
+        }
+
+
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>
