@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de erros / try catch finally</title>
+
+    <script>
+
+        //Nesta aula foi mostrado como pode ser gerado um erro de propósito, para casos como no exemplo abaixo em que o código está correto, porém para o programa há um valor máximo que deve ser inserido, neste caso até o 10.
+        var num
+
+        try{
+            //Foi solcitado que o usuário degite um valor
+            num=prompt('Digite um valor')
+            if(num > 10){
+                //Gerando a mensagem de erro, ela pode ser informada na tela ou no console
+                throw new Error('Valor inválido, o valor deve ser menor ou igual a 10<br>')
+
+            }
+            document.write('Valor: '+num)
+            //document.writ('Curso de Javascript')
+
+        }catch(e){//A utilizção do (e) é opcional, não importa o valor, neste caso o professor utilizou o (e) pela identificação que ele tem (exception / exceção)
+            //Neste trecho ele vai imprimir o erro, que pode ser na tela ou no console (console.log('ERR: '+ e.message))
+            document.write('ERR: '+ e.message)
+            //document.write('ERRO')
+            //console.log('Mensagem de ERRO: '+ e.message)
+        }finally{
+            document.write('Valor digitado: '+num)
+        }
+
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>
