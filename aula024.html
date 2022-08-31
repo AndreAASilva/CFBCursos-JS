@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML e mais sobre getElementById</title>
+
+    
+</head>
+<body>
+
+    <p id="texto">André Anderson</p>
+
+    <input type="text" id="cxtexto" value="CFB Cursos">
+
+    <p id="dv">Texto teste innerHTML</p>
+    
+    <script>
+
+        //var ctx = document.getElementById('cxtexto').value='Olá'
+
+        var ctx = document.getElementById('texto').innerHTML='Aula de innerHTML'
+        document.getElementById('dv').innerHTML='Olha nós aqui outra vez!'
+
+        //alert(ctx)
+
+        
+
+    </script>
+
+
+</body>
+</html>

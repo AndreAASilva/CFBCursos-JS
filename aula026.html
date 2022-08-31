@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelectorAll</title>
+
+    <style>
+        .titulo{
+            color:#f00;
+            font-size:20px;
+            text-decoration: underline;
+        }
+        div{
+            border: 1px solid #000;
+            padding:10px;
+            display:inline-block;
+        }
+        a{
+            display:block;
+        }
+        .quadro{
+            background-color: #bbb;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+
+    <h1 class="titulo">querySelectorAll</h1>
+    <p>O querySelectorAll() é um método que retorna os elementos do document que correspondem a uma classe de CSS ou a uma tag específica</p>
+    <h2 class="titulo">Curso de javascript</h2>
+    <p>www.youtube/cfbcursos</p>
+    <p class="titulo">cfbcursos.com.br</p>
+    <div>
+        <p>Este texto está dentro de uma div</p>
+        <p>Este também</p>
+    </div>
+    <div class="quadro">
+        <p>Este texto está dentro de uma div</p>
+        <p>Este também</p>
+    </div>
+    <a href="http://www.youtube.com/cfbcursos" target="_blank">CANAL</a>
+    <a href="http://cfbcursos.com.br">SITE</a>
+
+    <hr>
+
+    <script>
+        //Formatando alguns elementos dentro de uma div por exemplo, montamos o código 'div > p'
+        //Formatar todos os elementos dentro da div, montamos o código 'div > *' 
+        //Formatando outra div do html podemos utilizar uma classe nesta div e interligar conforme o padrão 'div.quadro *'
+        //Formatando mais de um elemento, montmos o código 'p,h1,h3'
+        var elementos = document.querySelectorAll('p,h1,h3')
+
+        for(var i=0; 1<elementos.length;i++){
+            elementos[i].style.color='green'
+            elementos[i].style.fontSize='20px'
+
+        }
+        
+        
+        /*
+        for(var i = 0;i<elementos.length;i++){
+            document.write(elementos[i].innerHTML+'<br>')
+            elementos[i].style.color='blue'
+        }
+        */
+
+    </script>
+
+    
+</body>
+</html>
