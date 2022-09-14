@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math - Métodos e Constantes matemáticas</title>
+
+    <script>
+
+        //var mt = Math.PI
+
+        var valor = 60
+        
+        //Raiz
+        //var mt = Math.sqrt(valor) 
+
+        //Randon - valor aleatório
+        //Para arredondar utilizamos o método round. *LÓGICA*
+        var mt = Math.round(Math.random()*valor)
+
+        //Criando um jogo da Mega Sena
+
+        for(var i = 0; i < 5; i++){
+            document.write(Math.round(Math.random()*valor),'<br>')
+
+        }
+
+        //Retornando um valor máximo ou mínimo
+        
+        
+        document.write(Math.min(2,3,4))
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date() - Manipular Data e Hora</title>
+
+    <script>
+        //Para as datas a semana começa com o domingo e como zero, sefunda é hum e por ai segue, para os meses a sequência é a mesma.
+
+        var dt= new Date()
+
+        //Para trabalhar com uma data determinada
+
+        var ndt = new Date(1978,02,07,02,00,00) //Ano,Mes,Dia,Hora,Min,Mil
+
+
+        //Para adicionar ou remover valores nas horas, dias, semans ou anos, utilizamos o set no lugar do get
+
+       
+        //var ndt = new Date()
+
+        //Adicinando uma quantidade de dias, anos, meses e outros na data
+        //ndt.setFullYear(dt.getFullYear()+3)
+
+
+        var diasem = ndt.getDay()
+        var dia = ndt.getDate()
+        var mes = ndt.getMonth()
+        var ano = ndt.getFullYear()
+
+        var horas = ndt.getHours()
+        var minutos = ndt.getMinutes()
+        var segundos = ndt.getSeconds()
+
+        //Criado arreys para os meses e semanas, pois como nas datas a contagem inicia em zero e com isso ele vai imprimir abaixo o que está sendo solicitado
+        var meses = new Array('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro')
+
+        var semanas = new Array('Domingo', 'Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 'Quinta-Feira', 'Sexta-Feira', 'Sábado')
+
+        document.write(semanas[diasem] + ', ' + dia + ' de ' + meses[mes] + ' de ' + ano +'<br>')
+        document.write(horas + ' : ' + minutos + ' : '+ segundos)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

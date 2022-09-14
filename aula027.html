@@ -50,8 +50,21 @@
         //var fm = document.forms[0].id
         //var fm = document.forms.item(0).id
         //var fm = document.forms.namedItem('curso1').innerHTML
-        var fm = document.forms['curso1'].elements[1].value
-        document.write(fm)
+        //var fm = document.forms['curso1'].elements[1].value
+        
+        //Pegando os elementos de um fomulário passo a passo
+        document.write(document.getElementById('curso1').elements[0].value)
+
+        var fm = document.forms[0]
+        var el = fm.elements;
+
+        //Manipulando vários elementos de uma vez
+        for(var i=0;i<el.length-1;i++){
+
+        el[i].style.backgroundColor='#ddd'
+        el[i].value="André Curso Javascript"
+        }
+        //document.write(el)
 
     </script>
 </body>
