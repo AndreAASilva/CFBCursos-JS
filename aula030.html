@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Javascript #30 - Funções - Criando suas próprias funções</title>
+
+    <script>
+
+        /*FUNÇÂO QUE CALCULA MÉDIA DOS VALORES DO ARRAY*/
+
+        var numeros=new Array(10,2,5,30,25,19,20,50)
+        function media(nums){
+            var tam = nums.length
+            var soma = 0
+            for(var i = 0; i < tam; i++){
+                soma+=nums[i]
+
+            }
+            return Math.round(soma/tam)
+        }
+
+        document.write(media(numeros))
+        
+        /*PARA ARMAZENAR
+        function soma(n1,n2){
+            return n1+n2
+        }
+
+        var res = soma(5,6)
+        document.write(res)
+        */
+
+        /*RETORNANDO O VALOR
+        function soma(n1,n2){
+            return n1+n2
+        }
+        Qundo utilizamos o return chamamos a função com o document.write(FUNÇÂO)
+        document.write(soma(5,5))
+        */
+
+        /*FUNÇÂO com PARÂMETROS
+        function soma(n1,n2,n3){
+            var res =n1+n2+n3
+            document.write(res+'<br>')
+
+        }
+
+        soma(5,2,2)
+        soma(10,11,5)
+        soma(1,3,2)
+        */
+        
+        /*FUNÇÃO SEM PARAMETRO
+        function aula(){
+            document.write("Curso de Javascript"+'<br>')
+        }
+
+        aula()
+        aula()
+        */
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>
