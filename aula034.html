@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Javascript #34 - addEventListener P2 (keydown)</title>
+
+    <style>
+        #dv1{
+            width:100px;
+            height:100px;
+            border:1px solid #000;
+            background-color: #f00;
+            position:absolute;
+            left:0px;
+            top:0px;
+        }
+    </style>
+
+    <script>
+
+        /*UMA DAS FORMAS DE UTILIZAR O KAYDOWN 
+
+        //Utilizando addEventListener para mover a div com o teclado
+
+        var px=0
+        var py=0
+
+        document.addEventListener('keydown',function(event){
+            //capturar o elemento que vou trabalhar no caso a DIV
+            var obj = document.getElementById('dv1')
+            //Aqui vou buscar o código da tecla precionada, ligando o event da function
+            var tecla = event.keyCode;
+            //Código das teclas / 37 - Esquerda / 38 - Cima / 39 - Direita / 40 - Baixo
+
+            //Movimentando a DIV com o if e else
+            if(tecla==37){
+                px-=10;
+                obj.style.left=px+'px'
+
+            }else if(tecla==38){
+                py-=10
+                obj.style.top=py+'px'
+
+            }else if(tecla==39){
+                px+=10
+                obj.style.left=px+'px'
+
+            }else if(tecla==40){
+                py+=10
+                obj.style.top=py+'px'
+            }
+
+        })
+
+        */
+
+        var px=0
+        var py=0
+        
+
+        function move(){
+            //var obj = document.getElementById('dv1')
+            var tecla = event.keyCode
+
+            if(tecla==37){
+                px-=10
+                obj.style.left=px+'px'
+            }else if(tecla==38){
+                py-=10
+                obj.style.top=py+'px'
+            }else if(tecla==39){
+                px+=10
+                obj.style.left=px+'px'
+            }else if(tecla==40){
+                py+=10
+                obj.style.top=py+'px'
+            }
+            
+            //inserindo comando para desabilitar a função das taclas quando clicar com o enter
+            else if(tecla==13){
+                alert('Evento keydown removido')
+                //Remover a função de mover com o teclado, informa o evento que deseja ser removido e a função 
+                document.removeEventListener('keydown', move)
+
+            }
+        }
+
+        //Adicionando o keydown 
+        function addClique(){
+            document.addEventListener('keydown',move)
+        }
+        
+        //Criada a função para ligar o load e inciar o keydown com o clique do mouse
+        function iniciar(){
+            obj=document.getElementById('dv1')
+            obj.addEventListener('click', addClique)
+            
+        }
+
+        //Carrega a página
+        window.addEventListener('load',iniciar)
+        
+    </script>
+
+</head>
+<body>
+
+
+    <div id="dv1"></div>
+    
+</body>
+</html>
