@@ -25,9 +25,10 @@
 
         var px=0
         var py=0
+        var obj;
 
         function move(){
-            var obj = document.getElementById('dv1')
+            //var obj = document.getElementById('dv1')
             var tecla = event.keyCode
 
             if(tecla==37){
@@ -42,12 +43,29 @@
             }else if(tecla==40){
                 py+=10
                 obj.style.top=py+'px'
+            }else if(tecla==13){
+                alert('Evento keydown prado')
+                document.removeEventListener('keydown', move)
+                obj.style.backgroundColor='#000'
             }
             
         }
 
-        document.addEventListener('keydown',move)
+        function addEvento(){
+            document.addEventListener('keydown',move)
+            obj.style.backgroundColor='#f00'
+        }
 
+               
+        
+        function iniciar(){
+            obj= document.getElementById('dv1')
+            obj.addEventListener('click', addEvento)
+            obj.style.backgroundColor='#fff'
+            
+        }
+
+        window.addEventListener('load', iniciar)
 
         
         

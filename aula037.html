@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Javascript #37 - Base para movimentação de personagens em games</title>
+
+    <style>
+        #dv1{
+            width:100px;
+            height:100px;
+            border:1px solid #000;
+            background-color: #f00;
+            position:absolute;
+            left:0px;
+            top:0px;
+        }
+    </style>
+
+
+
+    <script>
+        var dirx;
+        var diry;
+        var posx;
+        var posy;
+        var vel;
+        var obj;
+        var tmp;
+
+        function inicia(){
+            dirx=0;
+            diry=0;
+            posx=0;
+            posy=0;
+            vel = 1;
+            obj = document.getElementById('dv1')
+            document.addEventListener('keydown', teclaDw)
+            document.addEventListener('keyup', teclaUp)
+            tmp = setInterval(enterFrame,1)
+        }
+
+        //Posição e espaçamento das teclas
+
+        function teclaDw(){
+            var tecla=event.keyCode
+            if(tecla==37){
+                dirx=-1
+            }else if(tecla==38){
+                diry=-1
+            }else if(tecla==39){
+                dirx=1
+            }else if(tecla==40){
+                diry=1
+            }
+        }
+        function teclaUp(){
+            var tecla=event.keyCode
+            if(tecla==37){
+                dirx=0
+            }else if(tecla==38){
+                diry=0
+            }else if(tecla==39){
+                dirx=0
+            }else if(tecla==40){
+                diry=0
+            }
+        }
+
+        function enterFrame(){
+            posx+=dirx*vel
+            posy+=diry*vel
+            obj.style.left=posx+'px'
+            obj.style.top=posy+'px'
+        }
+
+
+        window.addEventListener('load', inicia)
+
+
+    </script>
+
+</head>
+<body>
+    <div id="dv1"></div>
+</body>
+</html>

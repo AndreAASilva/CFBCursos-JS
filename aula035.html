@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Javascript #35 - setTimeout e setInterval</title>
+    <style>
+        #dv1{
+            width:100px;
+            height:100px;
+            border: 1px solid #000;
+            background-color:#fff;
+        }
+    </style>
+    <script>
+
+        //A criação da uma variável global neste caso foi para facilitar o seu uso sendo que foram criadas outras funções onde ela será utilizada
+        var tmp;
+
+
+         //Função para criar cor aleatória
+        function mudaCor(){
+            obj = document.getElementById('dv1')
+            //Como serão utilizadas cores aleatórias, foi inserido o Math.random que vai buscar a cores de 0 a 255 em RGB
+
+            //Para que entre o 0 e 255 os valores sejam inteiros é utilizado o Math.floor
+            var r = Math.floor(Math.random()*255)
+            var g = Math.floor(Math.random()*255)
+            var b = Math.floor(Math.random()*255)
+            //Informa o estilo da DIV que vai alterar a cor
+            obj.style.backgroundColor='rgb('+r+','+g+','+b+')'
+            
+        } 
+
+        //Primeiro recebe a função e segundo o internalo de tempo e milessegundos 
+        //O setTimeout muda apenas uma vez após executar com o tempo informado
+        //É sempre bom para ajudar criar uma variável
+        //var temp = setTimeout(mudaCor,1000)
+
+        //Para repetir a função diferente do setTimeout que executa apenas uma vez, utilizamos o setInterval com as mesmas configurações
+        //OBS.: EXEMPLO ABAIXO É SEM O USO DOS BOTÕES, POR ISSO FOI DESABILITADO NESTE CÓDIGO
+        //var tmp = setInterval(mudaCor, 1000)
+
+        //Agora vamos chamar ou parar o evento com os botões
+
+        function iniciar(){
+            tmp=setInterval(mudaCor, 800)
+        }
+
+        function parar(){
+            //clearInterval limpa o evento setInterval fazendo ele parar de funcionar
+            clearInterval(tmp)
+        }
+
+        function addEventos(){
+            var bt1 = document.getElementById('bt1')
+            bt1.addEventListener('click',iniciar)
+            var bt2 = document.getElementById('bt2')
+            bt2.addEventListener('click',parar)
+
+        }
+
+        window.addEventListener('load',addEventos)
+
+    </script>
+</head>
+<body>
+    <div id="dv1"></div>
+    <br/>
+    <button id="bt1">Iniciar</button>
+    <button id="bt2">Parar</button>
+</body>
+</html>
