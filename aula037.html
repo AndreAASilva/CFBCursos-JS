@@ -18,9 +18,11 @@
         }
     </style>
 
-
+    
 
     <script>
+
+        //Nesta aula ele criou todas as variáveis de forma global
         var dirx;
         var diry;
         var posx;
@@ -30,14 +32,20 @@
         var tmp;
 
         function inicia(){
+
+            //Após p carregamento do load é inciada essa função e dentro dela te as demias funções para o funcionamento do código
             dirx=0;
             diry=0;
             posx=0;
             posy=0;
             vel = 1;
+            //Reconhecendo a DIV
             obj = document.getElementById('dv1')
+            //Criando evento de trecla pressionada
             document.addEventListener('keydown', teclaDw)
+            //Criando eento de tecla solta
             document.addEventListener('keyup', teclaUp)
+            //Criando evento de tempo de ação
             tmp = setInterval(enterFrame,1)
         }
 
@@ -69,6 +77,7 @@
         }
 
         function enterFrame(){
+            //calculando a ação da posição multiplicando o valor da direção com velocidade de movimento para a posição em que a DIV está
             posx+=dirx*vel
             posy+=diry*vel
             obj.style.left=posx+'px'

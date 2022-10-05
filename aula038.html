@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Javascript #38 - Relógio digital funcional</title>
+
+    <style>
+        #meuRelogio{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #dia{
+            text-align:center;
+            color: #0f0;
+            font-weight: bold;
+            font-size:30px;
+            width:500px;
+            background-color: #000;
+            border:solid 1px #000;
+        }
+
+        #rel{
+            text-align:center;
+            color: #0f0;
+            font-weight: bold;
+            font-size:100px;
+            width:500px;
+            background-color: #000;
+            border:solid 1px #000;
+        }
+    </style>
+    
+    <script>
+
+        function dataDia(){
+            var dataDia = new Date()
+            var dia = dataDia.getDate()
+            var mes = dataDia.getMonth()
+            var ano = dataDia.getFullYear()
+            
+
+            if(dia < 10){
+                dia='0'+dia
+            }
+            /*if(mes < 10){
+                mes='0'+mes
+            }*/
+            
+            if(mes == 0){
+                mes = 'Janeiro'
+            }else if(mes == 1){
+                mes = 'Fevereiro'
+            }else if(mes == 2){
+                mes = 'Março'
+            }else if(mes == 3){
+                mes = 'Abril'
+            }else if(mes == 4){
+                mes = 'Maio'
+            }else if(mes == 5){
+                mes = 'Junho'
+            }else if(mes == 6){
+                mes = 'Julho'
+            }else if(mes == 7){
+                mes = 'Agosto'
+            }else if(mes == 8){
+                mes = 'Setembro'
+            }else if(mes == 9){
+                mes = 'Outubro'
+            }else if(mes == 10){
+                mes = 'Novembro'
+            }else if(mes == 11){
+                mes = 'Dezembro'
+            }
+
+            var dataComp = 'Hoje é '+dia+' de '+mes+' de '+ano+'.'
+
+            document.getElementById('dia').value=dataComp
+
+        }
+
+        function relogio(){
+            var data = new Date()
+            var hora = data.getHours()
+            var minuto = data.getMinutes()
+            var segundo = data.getSeconds()
+
+            if(hora < 10){
+                hora='0'+hora
+            }
+            if(minuto < 10){
+                minuto='0'+minuto
+            }
+            if(segundo < 10){
+                segundo='0'+segundo
+            }
+
+            
+            var horas = hora + ':' + minuto + ':' + segundo
+            
+            document.getElementById('rel').value=horas
+            
+        }
+
+        var tempoAno = setInterval(dataDia,1000)
+        var tempo = setInterval(relogio,1000)
+        
+
+    </script>
+</head>
+<body>
+    <div id="meuRelogio">
+        <input type="text" id="dia">
+        <br/>
+        <input type="text" id="rel"/>
+    </div>
+</body>
+</html>
