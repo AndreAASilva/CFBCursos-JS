@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Javascript #43 - Slider em Javascript</title>
+
+    <style>
+        #dvslider{
+            width:1000px;
+            height:300px;
+            border:1px solid #000;
+
+        }
+
+    </style>
+        
+
+
+    <script>
+        //Quando a página é carregada as imagens devem aparecer e com isso devemos fazer um carregamento das imagens primeiro, em muitos sites quando eles começam a carregar há um espaço em branco antes da imagem ser carregada e neste exemplo vamos evitar esse problema
+
+        //Como há mais de uma imagem, foi criado o vetor e dentro da função será carregada en cada posição do vetor uma nova imagem
+        var imgs=[]
+        var slider;
+        var imgAtual;
+        var maxImg;
+        var tmp; //Variável criada para o intervalo de troca
+
+        function preCarregamento(){
+            //Criada uma variável para para trabalhar com as imagens 
+            var s=1
+
+            for(var i=0; i < 5; i++){
+                imgs[i]=new Image(); //Primeira posição
+                imgs[i].src="imgs/s"+s+".jpg"  
+                
+                //Definindo a URL da imagem, como é um array eu vou trabalhar com o FOR para ele utilizar todas as imagens da variável
+                
+                //É necessário também incrementar o S
+
+                s++
+                }    
+        
+        }
+
+        //Esta função vai carregar as imagens na DIV
+        function carregarImg(img){
+            //Passando qual imagem eu quero carregar
+            slider.style.backgroundImage="url('"+imgs[img].src+"')"
+        }
+
+        function inicia(){
+            preCarregamento()
+            //Aqui vou informar a primeira imagem a ser carregada com a variável imgAtual
+            imgAtual=0
+            //Aqui vou informar a quantidade de imagens dentro a array que quero que ele imprima
+            maxImg=imgs.length-1; //Como o array começa do zero devemos subtrair um número no length
+            slider=document.getElementById("dvslider")
+            //Agora eu vou inserir a função para carregar a imagem na DIV
+            carregarImg(imgAtual)//Dentro da função eu insiro qual imagem eu quero carregar que será a primeira imagem definida
+
+            //Aqui eu vou inserir o intervalo de tempo para a troca das imagens
+
+            tmp=setInterval(troca,2000)
+        }
+
+        //Para modificar as imagens
+        function troca(){
+            imgAtual++ //Incremento para ele carregar a próxima
+
+            //Apoós incrementar eu preciso verificar se imgAtual é maior que maxImg
+            if(imgAtual>maxImg){
+                //Se for maior ele volta para a posição zero
+                imgAtual=0
+
+            }
+            //Agora eu carrego a função:
+            carregarImg(imgAtual)
+
+        }
+
+        window.addEventListener('load',inicia)
+
+    </script>
+
+
+
+</head>
+<body>
+
+    <div id="dvslider"></div>
+    
+</body>
+</html>
