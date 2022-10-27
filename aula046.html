@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Javascript #46 - Strings P1 - Match</title>
+
+    <!--O método Match faz uma busca dentro da string por um texto específico-->
+
+
+</head>
+<body>
+
+    <!--O método Match faz uma busca dentro da string por um texto específico-->
+
+    <p id="txt">CFB Cursos - Curso de JAVASCRIPT - aula 46 do curso de javascript</p>
+
+
+    <script>
+
+        var texto=document.getElementById('txt').innerHTML
+
+        //Para buscas com o match podemos utilizar os modificadores (I e G) pois ele vai mostrar a quantidade certa mesmo que as palavras estejam inscritas de formas diferentes, maiúsculas ou minúsculas
+        var res=texto.match(/javascript/ig)
+
+        document.write(res,'</br>')
+        //Aqui eu consigo verificar a quantidade da pesquisa
+        document.write(res.length + '</br>')
+
+        //Aqui eu posso mostrar a palavra pela posição dela, neste exemplo ele me mmostra o segundo javascript, pois a contagem do arrey inicia com zero
+        document.write(res[1] + '</br>')
+
+        //Pesquisa por letras
+
+        var res=texto.match(/a/ig)
+
+        document.write(res + '</br>')
+        document.write(res.length + '</br>')
+
+        //Pesquisa por mais de uma letra
+
+        var res=texto.match(/[oaj]/ig)
+
+        document.write(res + '</br>')
+        document.write(res.length+ '</br>')
+
+        //Pesquisando todas as ocorrência menos as que informo dentro do parãmetro inserindo o símbolo ^
+
+        var res=texto.match(/[^oa]/ig)
+
+        document.write(res + '</br>')
+        document.write(res.length+ '</br>')
+
+        //Pesquisando letras de uma até outra, exemplo de A até o F, após o F ele não vai mostrar mais nenhuma
+
+        var res=texto.match(/[a-f]/ig)
+
+        document.write(res + '</br>')
+        document.write(res.length+ '</br>')
+
+        //Para pesquisa a quantidade de caracteres sem os espaços basta deixar um espaço após o símbolo ^
+        var res=texto.match(/[^ ]/ig)
+
+        document.write(res + '</br>')
+        document.write(res.length+ '</br>')
+
+
+        //Pesquisando caracteres após a letra informada utilizando o ^
+
+        var res=texto.match(/[^a-c]/ig)
+
+        document.write(res + '</br>')
+        document.write(res.length+ '</br>')
+
+        //Pesquisando numerais
+
+        var res=texto.match(/[\d]/ig)
+
+        document.write(res + '</br>')
+        document.write(res.length+ '</br>')
+
+         //Pesquisando por caracteres sem contar os espaços e traços
+
+         var res=texto.match(/[\w]/ig)
+
+        document.write(res + '</br>')
+        document.write(res.length+ '</br>')
+
+    </script>
+    
+</body>
+</html>

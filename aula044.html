@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Javascript #44 - Modernizando o Slider</title>
+
+
+    <style>
+        #dvslider{
+            width:1000px;
+            height:300px;
+            border:1px solid #000;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .btSlider{
+            background-color: rgba(0,0,0,0.4);
+            height:30%;
+            color:#fff;
+            cursor:pointer;
+            outline: none;
+            margin:10px;
+            border:none;
+        }
+
+        #dvload{
+            width:100%;
+            height: 5px;
+            margin-top:25%;
+            border:1px solid rgba(255,255,255,0.3)
+        }
+        /*Formatação da área interna da barra quando for carregando*/
+        #dvbarra{
+            width:0%;
+            height: 100%;
+            background-color: #fff;
+        }
+    </style>
+        
+
+
+    <script>
+        var imgs=[]
+        var slider;
+        var imgAtual;
+        var maxImg;
+        var tmp; 
+        var tempoTroca;
+        var vtempo; //Variável criada para o carregamento da barra e botões
+        var barra; //Variável criada para o carregamento da barra e botões
+
+        function preCarregamento(){
+            var s=1
+                for(var i=0; i < 5; i++){
+                    imgs[i]=new Image(); 
+                    imgs[i].src="imgs/s"+s+".jpg"  
+                    s++
+                    }    
+        }
+
+       
+        function carregarImg(img){
+            slider.style.backgroundImage="url('"+imgs[img].src+"')"
+        }
+
+        function inicia(){
+            preCarregamento()
+            imgAtual=0
+            maxImg=imgs.length-1; 
+            slider=document.getElementById("dvslider")
+            vbarra=document.getElementById('dvbarra')
+            carregarImg(imgAtual)
+            tempoTroca=0;
+            anima()
+        }
+
+        //Criado o parâmetro dir que vai informar a direção da troca
+        function troca(dir){
+            tempoTroca=0; //Aqui ele vai zerar o tempoTroca, pois toda vez que for feita a troca ele zera o tempo e pois o tempo poderá ser alterado conforme eu clique nos botões
+            imgAtual+=dir;  
+            if(imgAtual>maxImg){
+               imgAtual=0
+            }else if(imgAtual<0){
+                imgAtual=maxImg
+            }
+                carregarImg(imgAtual)
+        }
+
+        //Esta função vai incrementar o tempo troca
+        function anima(){
+            tempoTroca++
+            if(tempoTroca >= 500){
+                tempoTroca=0
+                //Chamo a função troca no automático e ele vai chamar 1 e passando para o próximo slider
+                troca(1)
+            }
+            //Para calcular a porcentagem de tempo que a barra será preenchida, dividimos o tempo em partes, neste caso como o tempo é 500, a variável vtempo será dividida por 5, se o tempo fosse de 1000, o vtempo seria dividido por 10
+            vtempo=tempoTroca/5;
+            vbarra.style.width=vtempo+'%'
+            window.requestAnimationFrame(anima)
+        }
+
+        window.addEventListener('load',inicia)
+
+    </script>
+</head>
+
+
+<body>
+    <div id="dvslider">
+        <button class="btSlider" onclick="troca(-1)"><</button>
+        <div id="dvload">
+            <div id="dvbarra"></div>
+        </div>
+        <button class="btSlider" onclick="troca(1)">></button>
+    </div>
+</body>
+</html>
