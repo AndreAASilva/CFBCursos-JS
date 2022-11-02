@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Javascript #48 - Métodos para manipulação de string P3</title>
+</head>
+<body>
+    
+
+    <p id="txt">CFB Cursos - Curso de Javascript</p>
+
+    <script>
+
+        var texto1=document.getElementById('txt').innerHTML
+        var texto2='CFB Cursos - Curso de Javascript'
+
+        //indexOf - retorna a posição do primeiro caractere que especificar pra ele
+        var res=texto1.indexOf('u')
+
+        if(res < 0){
+            document.write('Letra não encontrada'+'<br>')
+        }else{
+            document.write(res+'<br>')
+        }
+
+        //lastIndexOf - retorna o último caractere encontrado, mesmo formato de uso.
+
+        //localeCompare - verifica se as strings são iguais
+        //0 = iguais
+        // Se não for igual a 0 = diferentes
+
+        var res=texto1.localeCompare(texto2)
+
+        if(res == 0){
+            document.write('Strings iguais'+'<br>')
+
+        }else{
+            document.write('Strings diferentes'+'<br>')
+        }
+
+         
+        //Slice - Este método faz um corte da string e me mostra a patir de onde determino até onde também determino, lembrando que a contagem inicia com zero
+
+        var res=texto1.slice(3,10)
+        document.write(res+'<br>')
+
+        //split - Vai picar a sting no caracter que informar, neste exemplo eu vou pedir para imprimir as palavras por posição e o split vai reconhecer pelos espaços
+
+        var res=texto1.split(' ')
+
+        document.write(res[0]+'<br>')
+        document.write(res[3]+'<br>')
+        document.write(res[5]+'<br>')
+
+
+        //substr - Semelhante ao slice - indicamos a posição incial e o tamanho do corte
+
+        var res=texto1.substr(4,6)
+        document.write(res+'<br>')
+
+        //toLowerCase - Converte para minúsculo
+        //toUpperCase - Converte para maiúsculo
+
+        var res=texto1.toLowerCase()
+        document.write(res+'<br>')
+
+        var res=texto1.toUpperCase()
+        document.write(res+'<br>')
+
+        //Podemos  utilizar métodos juntos como no exemplo abaixo onde vou imprimir uma determinada palavra do texto em maiúsculo
+
+        var res=texto1.toUpperCase().slice(22,32)
+
+        document.write(res+'<br>')
+        
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Javascript #47 - Métodos para manipulação de string P2</title>
+
+</head>
+<body>
+    
+    <p id="txt">CFB Curso - Curso de Javascript - aula 47 do curso de javascript</p>
+
+    <script>
+
+        // SEARCH - metodo mostra a posição da primeira ocorrência encontrada
+        var texto = document.getElementById('txt').innerHTML
+        var txt2 = ' Texto complementar'
+        var txt3 = ' Outro texto'
+
+        // SEARCH - metodo mostra a posição da primeira ocorrência encontrada
+        var res=texto.search(/curso/i)
+
+        document.write(res + '<br>')
+
+        //REPLACE - substitui a primeira sentença
+
+        var res=texto.replace(/curso/i,'André')
+
+        document.write(res + '<br>')
+
+        //REPLACE = substituindo todas a palavras
+
+        var res=texto.replace(/curso/ig,'Anderson')
+
+        document.write(res+'<br>')
+
+        //CHARAT - retorna o elemento que solictamos pela posição, lembrando que a contagem começa do zero
+
+        var res=texto.charAt(7)
+        
+        document.write(res+'<br>')
+
+        //CHARCODEAT - retorna o código do caractere solicitado
+
+        var res=texto.charCodeAt(0)
+
+        document.write(res+'<br>')
+
+        document.write(String.fromCharCode(67)+'<br>')
+
+        //CONCAT - Funde uma string na outra (concatena)
+        //Para o método concat podemos informar uma variável e também string, no exemplo abaixo seguem os dois casos
+        var res=texto.concat(txt2 + ' texto extra' + txt3)
+
+        document.write(res)
+
+    </script>
+
+</body>
+</html>
