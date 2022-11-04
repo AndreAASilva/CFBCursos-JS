@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos para manipulação de string P4
+    </title>
+</head>
+<body>
+
+    <p id="txt">CFB Cursos - Curso de Javascript</p>
+
+    <script>
+
+        var texto=document.getElementById('txt').innerHTML
+
+        var num = 15
+        //Converte números em strings
+        //Neste exemplo foi convertido o valor 15 em binário, octadecimal e hexadecimal
+        var res=num.toString()
+        var bin=num.toString(2)
+        var oct=num.toString(8)
+        var hex=num.toString(16)
+
+        document.write(res+'<br>')
+        document.write(bin+'<br>')
+        document.write(oct+'<br>')
+        document.write(hex+'<br>')
+
+        //o trim elimina espaços antes e depois da cadeia de caracteres de uma string
+        var texto='      CFB Cursos - Curso de Javascript      '
+
+        var res=texto.trim()
+        alert(res)
+        document.write(res+'<br>')
+
+        // \antes e depois\ - Para utilização de caracteres especiais
+        var texto = 'CFB Cursos - \"Curso\" de Javascript'
+
+        document.write(texto+'<br>')
+
+
+    </script>
+    
+</body>
+</html>
