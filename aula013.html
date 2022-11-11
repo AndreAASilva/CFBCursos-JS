@@ -7,6 +7,57 @@
     <title>Array / Vetor - Aula 01</title>
 
     <script>
+
+        var nomes = []
+        var nomeFruta = ['maçã','pera','uva','abacate']
+
+        nomes.push('André')
+        nomes.push('Anderson')
+        nomes.push('Alves')
+        nomes.push('Silva')
+        nomes.push('Antonio')
+
+        document.write(nomes+'<br>')
+        document.write(nomes+'<br>')
+        document.write(nomes[4]+'<br>')
+
+        document.write(nomeFruta+'<br>')
+        document.write(nomeFruta[2]+'<br>')
+
+        document.write(Math.round(Math.random()*nomeFruta.length)+'<br>')
+
+        var frutaAle = Math.round(Math.random()*nomeFruta.length)
+
+        
+
+
+
+        function frut(){           
+            
+            var frutas = document.getElementById('frutaAle')
+            
+            document.write(frutas)
+            /*
+            if(nomeFruta[0]){
+                document.write(nomeFruta[0])
+            }
+            else if(nomeFruta[1]){
+                document.write(nomeFruta[1])
+            }
+            else if (nomeFruta[2]){
+                document.write(nomeFruta[2])
+            }
+            else if (nomeFruta[3]){
+                document.write(nomeFruta[3])
+            }
+            */
+        }
+        
+        
+        
+
+
+
         // O push insere elementos dentro do array na última posição
 
         var cor = []
