@@ -4,30 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LET</title>
+    <title>Função P2<</title>
 
     <script>
-        // var é uma variável global
-        // let é uma variável local. Dá forma que foi inserido no código, o num será 5 apenas no bloco if, caso não fosse inserido todos os write seriam 10, apenas modificariam se no lugar do let fosse iserido um var que iria modificar a variável no meio do código e seguir com essa modificação por diante.
-        
-        var num = 10
 
-        document.write(num+'<br>')
 
-        if(num=10){
-            let num = 5
-            document.write(num+'<br>')
+        /*
+        function canal(){
+            return 'André'
+        }
 
+        console.log(canal())
+        console.log(canal())
+        console.log(canal())
+        */
+
+        function canal(){
+            let n1 = 2
+            let n2 = 0
+            let res = n1+n2
+
+
+            if(res === 2){
+                return 'Par'
+            }else{
+                return 'Ímpar'
+            }
+        }
+
+        let res = canal()
+        console.log(res)
+
+
+        /*
+        let pergunta = prompt('Qual o seu nome? ')
+        console.log('O nome digitdo foi: ' + pergunta)
+
+        function canal(){
+            let n1 = 1
+            let n2 = 2
+            let res = n1*n2
+
+            if(res === 3){
+                return 'PAR'
+            }
+            else{
+                return 'Impar'
+            }
 
         }
 
-        document.write(num+'<br>')
+        let res = canal()
+
+       console.log(res)
+       */
+        
+       
 
     </script>
 
 
 </head>
 <body>
+    
+       
     
 </body>
 </html>

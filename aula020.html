@@ -4,42 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do while</title>
+    <title>Função P1</title>
+
+    
+</head>
+<body>
+    <p id="n1">André Anderson</p>
+    <p id="n2">André Anderson</p>
+    <p id="n3">André Anderson</p>
+    <button onclick="mudarTexto()">Mudar Texto</button>
+    <button onclick="voltarTexto()">Voltar Texto</button>
+    <button onclick="link('https://www.uol.com.br')">Link de Teste</button>
 
     <script>
 
-        //do while - Ele executa pelo menos uma vez e depois testa seguindo com a execução
+        function mudarTexto(){
+            
+            var n1 = document.getElementById('n1')
+            var n2 = document.getElementById('n2')
+            var n3 = document.getElementById('n3')
+            
+            n1.innerHTML='Olá'
+            n2.innerHTML='Mundo'
+            n3.innerHTML='Doido'
+        }
 
-        var num = 0;
+        function voltarTexto(){
+            
+            n1.innerHTML='André Anderson'
+            n2.innerHTML='André Anderson'
+            n3.innerHTML='André Anderson'
+        }
 
-        do{
-            document.write('André Anderson<br>')
-            num++
-        }while(num<10)
+        /*
+        function nome(){
+         console.log('André Anderson')
+        }
+        
+        for(let i = 0; i < 10; i++){
+             nome()
+        }
+        */
+        /*
+        function soma2_10(){
+             let n1 = 2
+             let n2 = 10
+             let soma = n1+n2
+             console.log(soma)
+        }
+ 
+        for(let i = 0; i < 10; i++){
+             soma2_10()
+        }
+        
+ 
+        function mudarTexto(){
+             var n1 = document.getElementById('n1')
+             var n2 = document.getElementById('n2')
+             var n3 = document.getElementById('n3')
+ 
+             n1.innerHTML = 'Olá'
+             n2.innerHTML = 'Mundo'
+             n3.innerHTML = 'Doido'
+        }
+        
+        function voltarTexto(){
+            var n1 = document.getElementById('n1')
+            var n2 = document.getElementById('n2')
+            var n3 = document.getElementById('n3')
 
-        var nome = 0
+            n1.innerHTML='André Anderson'
+            n2.innerHTML='André Anderson'
+            n3.innerHTML='André Anderson'
+        }
+        
+        function link(url){
 
-        do{
-            document.write('André Anderson<br>')
-            document.write('Alves Silva<br>')
-            nome++
-        }while(nome<10)
-
-        var num2 = 0
-
-        do{
-            document.write(num2+'<br>')
-            num2++
-
-        }while(num2<10)
+            window.open(url, '_blank')
+        }
+        */
+        //mudarTexto()
 
 
-    </script>
-
-
-
-</head>
-<body>
-    
+ 
+     </script>
 </body>
 </html>
