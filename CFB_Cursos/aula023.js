@@ -1,71 +1,39 @@
- /*Função parametrizada*/
+/* Parâmetros REST em funções Javascript */
 
- function soma(n1, n2){
-    console.log(n1 + n2)
+/*Neste modelos ele vai retornar a quantidade de valores passados abaixo no console.log()*/
+function soma1(...total){
+    let tam1 = total.length
+    return tam1
 }
 
-soma(10,20)
-soma(2023)
-soma(5.1)
+console.log(soma1(4,4,4,4,4,4,4,4))
 
-function soma2(n3=1, n4=5){
-    console.log(n3+n4)
+/*Criar uma função sem número determinado de valores */
+/* A indicação do spread (...) antes de valores indica que serão utilizados parâmetros rest, podendo informa a quantidade de valores que quiser na chamada*/
+function soma(...valores){
+    /*Primeiro é necessário saber quantos valores foram passados, utilizando o length que mostra a quantidade dos valores. (valores está sendo considerado um array) */
+    let tam = valores.length
+    /*Criada variável resultado com o valor zero, pois nela será informado a soma dos valores informadps*/
+    let res = 0
+    /*Utilizando o FOR será acrescentado valores e somados no res*/
+    for(let i = 0; i < tam; i++){
+        res+=valores[i]
+
+    }
+    return res
 }
+console.log(soma(10,5,2,2,2,2))
 
-soma2()
 
-function soma3(n5=7, n6=8){
-    return n5+n6
-}
-
-console.log(soma3())
-
-function soma4(n7=5, n8=15){
-    let res = n7+n8
+/*
+function soma(...valores){
+    let res = 0
+    for(let v of valores){
+        res+=v
+    }
     return res
 }
 
-let resultado = soma4()
-console.log(resultado)
+console.log(soma(5,5,5,5,5,5))
+*/
 
-
-let valor_padrao = 2
-
-function soma5(n9=valor_padrao, n10=valor_padrao){
-    let res = n9 + n10
-    return res
-}
-
-let novoResultado = soma5()
-console.log(novoResultado)
-
-
-
-//Aqui ele vai sobrepondo o valor da variável e imprimindo conforme se pede
-function soma6(v){
-    return novoValor+v
-}
-
-let novoValor = 0
-console.log(novoValor)
-
-novoValor = soma6(10)
-console.log(novoValor)
-
-novoValor = soma6(5)
-console.log(novoValor)
-
-
-//Aqui ele vai sobrepondo o valor da variável e imprimindo conforme se pede com a remoção do return e com isso não é necessário chamar o console.log para imprimir
-function soma7(z){
-    novoValor01+=z
-}
-
-let novoValor01 = 0
-console.log(novoValor01)
-
-soma7(10)
-console.log(novoValor01)
-
-soma7(5)
-console.log(novoValor01)
