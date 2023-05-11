@@ -46,8 +46,8 @@ for(o in objs){
     console.log(o)
 }
 */
-const nome = ['André', 'Anderson', 'Alves', 'Silva']
-const nome01 = nome['Alves']
+const nome = ['André', 'Anderson', 'Alves', 'Silva', 'Carlos', 'Andreza']
+
 
 /*
 for(i in nome){
@@ -59,10 +59,10 @@ for(i of nome){
 }
 */
 
-if(nome){
-    for(i of nome){
-        if(i == 'Alves'){
-            console.log('Nome localizado')
-        }
+
+for(i of nome){
+    if(i == 'André'){
+        console.log('Nome: ' + i +' localizado')
     }
 }
+
