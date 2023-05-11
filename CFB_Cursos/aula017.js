@@ -10,7 +10,7 @@ while(n < 10){
     n++
 }
 */
-let n1 = 10
+let n1 = 5
 let fat = 1
 
 while(n1>=1){
