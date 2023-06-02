@@ -5,13 +5,13 @@ Elemento - O elemento que ele está iterando
 
 Se vamos trabalhar com o MAP é necessário uma função para isso e o instrutor utiliza uma arrow function pra isso
 */
-
+/*
 const cursos = ['HTML', 'CSS', 'Javascript']
 
 cursos.map((el, i)=>{
     console.log('Curso ' + el + ' posição ' + i)
 })
-
+*/
 /*
 PROVÁVEL RESOLUÇÃO DO PROBLEMA DO CALENDÁRIO
 
@@ -23,3 +23,7 @@ el2.map((el,i)=>{
 })
 */
 
+
+let numberValue = 0
+console.log(numberValue++)
+console.log(++numberValue)
