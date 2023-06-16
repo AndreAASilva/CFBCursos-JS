@@ -13,9 +13,29 @@ let mapa = new Map()
 mapa.set('curso','Javascript')
 mapa.set(10,'CFB Cursos')
 mapa.set(1,100)
-mapa.set('canal', 100)
+mapa.set('canal', 200)
 
-console.log(mapa)
+//Deletando um item da coleção
+mapa.delete(1)
 
-caixa.innerHTML = mapa.get('canal') //Imprimiu o 100 dentro da caixa
+let pes = 1 //Criando variável para pesqusia
+let res = ''
+//Pesquisando pela variável - Verificando se tem o item na chave com o has
+if(mapa.has(pes)){
+    caixa.innerHTML = 'A chave tem o valor pesquisado: '+mapa.get(pes) //Obtendo o valor do item da chave com o get
+}else{
+    caixa.innerHTML = 'A chave não tem nenhum valor'
+}
+
+//Verificando o tamanho da coleção com o size
+res+='<br/> O tamanho da coleção é: '+mapa.size
+caixa.innerHTML += res
+//console.log(mapa)
+
+//Com o forEach utillizamos uma função para obter dados da coleção
+mapa.forEach((e, i)=>{
+    console.log(e,i)
+})
+
+//caixa.innerHTML = mapa.get('curso') //Imprimiu o 100 dentro da caixa
 
